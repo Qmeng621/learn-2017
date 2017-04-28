@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>js内置对象</title>
+</head>
+<body>
+<script>
+// 01:对象的定义
+// var obj = {
+// 	content:"hello world"//content是键名,hello world是键值
+// }
+
+// 02:对象的书写方法:三种写法是等价的
+// var obj2 = {};
+// var obj2 = new Object();
+// var obj2 = Object.create(null);
+// console.log(typeof(obj2));
+
+// 03:对象的属性
+var message = "hello world";
+var mlen = message.length
+console.log(mlen);//它的长度是包括空格的
+
+// 04:对象的方法,如下案例:把小写转化为大写
+var mystr = "hello world";
+var mystrup = mystr.toUpperCase();//小写转为大写
+console.log(mystrup);
+
+// 时间对象:date
+var nowTime = new Date();//可以通过 new 关键词来定义 Date 日期对象
+console.log(nowTime);
+var myYear = nowTime.getFullYear();//得到当时四位数年份,如:2017
+var myMonth = nowTime.getMonth()+ 1;//得到当时月份:月份是从 0 开始的所以要加上 1
+var myDate = nowTime.getDate();//日期;如1号
+var myHours = nowTime.getHours();//小时,24小时制
+var myMinutes = nowTime.getMinutes();//分钟  有s
+var mySeconds = nowTime.getSeconds();//秒 有s
+console.log("今天是"+ myYear + "年" + myMonth + "月" + myDate + "日");
+console.log("现在是"+ myYear + "年" + myMonth + "月" + myDate + "日" + myHours + "时" + myMinutes + "分" + mySeconds + "秒");
+
+//返回星期
+var now = new Date();
+var weekday = ["星期7","星期1","星期2","星期3","星期4","星期5","星期6"]
+var mynum = now.getDay();//获取今天是星期几
+console.log(mynum);//打印出今天是星期几
+console.log("今天是:"+weekday[mynum]);
+
+// string对象
+var myStr = "I like Javescript";
+var mylen = myStr.length;
+var myup = myStr.toUpperCase();
+var mylower = myStr.toLowerCase();
+console.log("字符串长度是:"+ mylen);
+console.log("字符串转换为大写是:"+ myup);
+console.log("字符串转换为小写是:"+ mylower);
+
+// indexOf()  返回某个指定字符在字符串首次出现的下标位置
+// 如果要检索的字符没有出现,返回的值是 -1
+var my_Str = "I like Javescript";
+console.log(my_Str.indexOf("J"));
+console.log(my_Str.indexOf("v"));
+console.log(my_Str.indexOf("v",8));//8 表示从下标是8的位置开始检查
+
+// charAt()返回指定位置的字符
+var my_STR = "I like Javescript";
+console.log("下标为3的字符是:" + my_STR.charAt(3));//打印下标为3的字符
+
+// split()字符串分割:将字符串分割成字符串数组,并返回数组
+var my_yuming = "www.qmengweb.com.cn";
+console.log(my_yuming.split("."));//以. 点作为分割符
+console.log(my_yuming.split(".",2));//以. 点作为分割符,分割 2 次
+console.log(my_yuming.split(".",3));//以. 点作为分割符,分割 3 次
+
+
+// substring():截取字符串:截取介于两个指定下标之间的字符
+var my_ = "I like Javescript";
+console.log(my_.substring(2,7));//从下边为2的开始到下标为 6结束；即包括开始,但不包括结束.
+
+
+// substr():截取指定下标开始的指定长度的字符串;跟substring()的区别是:substring()是指定下标之间的字符串
+// substr()是指定长度的字符串
+var myy_ = "I like Javescript";
+console.log(myy_.substr(3,6));//从下标为3的位置开始,到长度为 6 结束
+console.log(myy_.substr(3));//只有一个参数的时候: 从下标为3的位置开始,直到最后结束
+console.log(myy_.substr(-4,3));//负数的时候: 从下倒数第4的位置开始,直到长度为 3 结束
+
+
+// Math对象
+console.log(Math.PI);//π的值
+console.log(Math.abs(-15));// -15的绝对值
+
+// Math取整数的方法ceil/floor/round
+console.log(Math.ceil(0.5))//天花板;即向上取整
+console.log(Math.floor(0.5))//地板;即向下取整
+console.log(Math.round(0.5))//四舍五入
+
+
+// Math.random() 随机数:返回0-1的随机数数( >= 0,但小于 1的随机数)
+console.log(Math.random());
+console.log(Math.random()*10);//输出 0 到 10 的随机数
+
+// Math.max() Math.min() 最大值与最小值
+console.log(Math.max(0.2,0.1,0.8,0.9,0.4,0.6));
+console.log(Math.min(0.2,0.1,0.8,0.9,0.4,0.6));
+
+// 数组对象
+// var myshuzu =[];
+var myshuzu = new Array();
+console.log(typeof(myshuzu));//判断变量的类型
+// var myshuzu = new Array(n);//定义 n 个空元素的数组
+
+// concat():数组连接：合并多个数组. concat返回新数组，原数组不会改变
+// 数组名1.concat(数组名2，数组名3,...)；
+var mya1 = [1,3]
+var mya2 = [2,3]
+var mya3 = [3,3]
+console.log(mya1.concat(mya2,mya3));//返回新数组，原数组不会改变
+console.log(mya1);//原数组不会改变
+
+// join() :把同一个数组中的每一个元素通过 指定 的分隔符 连接 放入一个字符串中，并返回字符串。原数组不变。
+// join的分隔符如果省略的话以逗号分割。
+var mylianjie = ["www","qmengweb","com","cn"];
+console.log(mylianjie.join("."));
+console.log(mylianjie.join(":"));
+
+// reverse():颠倒数组中元素的顺序
+var my_shuzu = ["www","qmengweb","com","cn"];
+console.log(my_shuzu.reverse());//颠倒数组中的元素顺序
+
+// slice():划分出新数组
+var my_Shuzu = ["www","qmengweb","com","cn"];
+console.log(my_Shuzu.slice(0,2));//不包括下标 2;即包括开始,但不包括结束.
+console.log(my_Shuzu.slice(1,3));//不包括下标 3;即包括开始,但不包括结束.
+
+
+
+//sort():排序
+function sortNum(a,b){
+	return a - b;//升序，如果要降序，改成b - a；
+}
+var my_arr01 = new Array("zello","join","love","Javescript");
+var my_arr02 = new Array("80","6","15","30","20");
+console.log(my_arr01.sort());
+console.log(my_arr02.sort());
+//console.log(my_arr01.sort(sortNum));//升序
+console.log(my_arr02.sort(sortNum));//升序
+
+	//加了最后的注释行
+</script>
+</body>
+</html>

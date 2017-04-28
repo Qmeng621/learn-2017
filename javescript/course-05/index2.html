@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" onclick="alert('html')">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>阻止冒泡</title>
+</head>
+<body onclick="alert('body')">
+	<div onClick="alert('div')">
+		<ul onClick="alert('ul')">
+			<li onClick="alert('li')">
+				<a id='aid'>点我</a>
+			</li>
+		</ul>
+	</div>
+<script>
+var aid = document.getElementById('aid');
+aid.onclick = function (e){//did点击的时候执行匿名函数
+	e.stopPropagation();//阻止冒泡,a外边的都阻止了冒泡,不要再往上冒泡了,相当于用盖子盖住,不用再往上冒泡了
+	alert('你点击了a标签');
+}
+
+</script>
+</body>
+</html>

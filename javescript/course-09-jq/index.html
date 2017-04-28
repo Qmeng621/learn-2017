@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JQuery常用知识运用</title>
+	<style>
+		.test2 {
+			background: #080;
+			color: #ff0;
+		}
+		.bg{
+			background: #080;
+			font-size: 24px;
+		}
+		.toggleBox{
+			width: 100px;
+			height: 100px;
+			background: #080;
+		}
+		.hide{
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div>div标签1</div>
+	<div>div标签2</div>
+	<hr>
+
+	<!-- 案例 2:某某附加(添加) -->
+	<div class="content"></div>
+
+	<!-- 案例 3:在某某后添加 -->
+	<input type="button" id="btn" value="btn按钮">
+	<div id="box" class="red" title="hello">这是idbox盒子</div>
+	<hr>
+
+	<!-- 案例 4:remove -->
+	<div class="box1">
+		<p>段落1</p>
+		<p>段落2</p>
+	</div>
+	<div class="box2">
+		<p>段落3</p>
+		<p>段落4</p>
+	</div>
+	<button id="btn01" class="btn011">按钮A</button>
+	<button id="btn02">按钮B</button>
+
+	<hr>
+	<!-- 案例5: 点击按钮的时候增加class -->
+	<div class="addBox">增加背景颜色</div>
+	<button type="button" id="addBtn">点击增加样式</button>
+	<hr>
+
+	<!-- 案例 6: 点击自己的时候增加class -->
+	<div class="addClass">点击自己的时候增加class</div>
+	<hr>
+
+	<!-- 案例 7: 点击自己移除class -->
+	<div class="boxA bg">点击自己移除class</div>
+	<hr>
+
+	<!-- 案例 8: 点击切换class -->
+	<button type="button" id="toggleBtn">toggle切换</button>
+	<div class="toggleBox hide">toggle内容box</div>
+	<hr>
+
+	<!-- 案例 9: 点击添加css -->
+	<div class="boxCss">boxCss点击添加样式</div>
+	<hr>
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		//案例 1:把某某附加到(添加到) body内;添加样式:addClass
+		var div = $('<div>jQuery创建的DIV</div>');
+		var text = $("<div id='test' class='aaron'>我是text文本节点</div>");
+		div.appendTo('body'); //添加到body
+		text.addClass(' test2');//test2前加空格,这样text本身自己有的aaron样式也会保留
+		text.appendTo('body');
+
+
+		// //案例 2:某某附加(添加)
+		// var content = $(".content");
+		// content.append('<div>空content附加的内容</div>')//添加
+		//
+
+		//案例 3:在某某后添加
+		$('#btn').click(function () {
+			var box = $('#box');
+			box.attr('title');
+			console.log(box.attr('title'));
+			box.after('<div>idbox后边啦啦啦</div>')//在box后添加html代码内容
+		})
+
+		//案例 4:remove是连根拔起;empy:是清空,保留根
+		$('#btn01').click(function(){
+			$('.box1').remove();//remove移除整个box1;换成 empy试试
+		})
+		$('#btn02').click(function(){
+			$('p').remove(":contains('3')");//remove移除p标签中contains(包含)包含3的 p 元素
+		})
+
+		// 案例5: 点击的时候增加class
+		$('#addBtn').on('click',function(){
+			var addBox = $('.addBox');
+			addBox.addClass('bg');//因为已经明确告诉是添加class了,就直接写class名就行了,不用前面加点
+			// addBox.addClass('bg');//因为已经明确告诉是添加class了,就直接写class名就行了,不用前面加点
+		})
+
+		// 案例6: 点击自己的时候增加class
+		$('.addClass').on('click',function(){
+			$(this).addClass('bg');//this指自己
+		})
+
+		// 案例 7: 点击自己移除class
+		$('.boxA').on('click',function(){
+			$(this).removeClass('bg');
+		})
+
+		// 案例 8: 点击切换class
+		$('#toggleBtn').on('click',function () {
+			var toggleBox = $('.toggleBox');//toggleBox.toggleClass('hide');//toggleClass切换样式,有的时候隐藏,没有的时候显示
+			//等价于下面一行:前面有class后面括号()里就不用加点.  ,前面没有class后面括号()里就要加点 .
+			toggleBox.toggle('.hide');//toggleClass切换样式,有的时候隐藏,没有的时候显示
+			// toggleBox.toggleClass('hide') 等于 toggleBox.toggle('.hide');
+		})
+
+
+		// 案例 9: 点击添加css
+		$('.boxCss').on('click',function(){
+			//$(this).css('color','#f00');//加一个css是这样,多个要加{}大括号,对象的形式写
+			$(this).css({
+				'background':'#f55',
+				'color':'#fff',
+				'font-size':'30px'
+			})
+		})
+
+
+
+		// $('div').click(function(){//效果没有实现
+		// 	$(this).clone();
+		// 	$(this).clone(true);
+		// })
+
+	</script>
+</body>
+
+</html>

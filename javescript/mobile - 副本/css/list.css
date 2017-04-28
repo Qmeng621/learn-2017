@@ -1,0 +1,51 @@
+
+.list-box{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 1.4em 1.0em 1.0em ;
+    background: #fff;
+    display:flex;
+    border-bottom: 1px solid #f3f3f3;
+}
+.list-content{
+    flex:1;
+    color: #777;
+}
+.list-content p{
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+.list-box-img{
+    width: 110px;
+    height: auto;
+    float: left;
+}
+.list-content >a{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+}
+.list-content >a >img{
+    width: 100%;
+    padding: 0 0.1em;
+}
+
+.list-content >span{
+    display: block;
+    width: 100%;
+    background: white;
+    font-size: 1.4em;
+    text-align: center;
+}
+.list-box >p{
+    font-size: 1.6em;
+    color: #777;
+    margin-left: 0.5em;
+}
+.list-box >p >span{
+    padding-right: 0.6em;
+    font-size: 0.6em;
+    color: #bbb;
+}

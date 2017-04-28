@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>function</title>
+</head>
+<body>
+	<input type="text" id="valueA"> +
+	<input type="text" id="valueB"> =
+	<span id="sumValue"></span>
+	<button id="addBtn">求和</button>
+	<script>
+			//求和函数
+			//add是函数名,括号内x,y是函数的参数;
+			function add(x, y) {
+					var result = x + y;
+					return result;
+			}
+
+			window.onload = function () {
+					addBtn.onclick = function () {
+							var valueA = document.getElementById('valueA').value;
+							var valueB = document.getElementById('valueB').value;
+							var addBtn = document.getElementById('addBtn');
+							var sumValue = document.getElementById('sumValue');
+							// var a = Number(valueA); //用Number可以把数字类型的字符串转换为数字;或者写成+valueA,如下一行的形式
+							var a = +valueA;//或写成Number(valueA)这样转换为Number值
+							var b = Number(valueB);//或写成+valueB这样转换为Number值
+							var res = add(a, b);
+							sumValue.innerHTML = res;
+					}
+			}
+
+			// 求和函数
+			function app(x,y){
+				var x,y,he;
+				var he = x * y;
+				return he;
+			}
+			 var res01 = app(5,6);
+			 var res02 = app(10,10);
+			 var sumres = res01 + res02;
+			 document.write('res01的值是:' + res01 + '<br/>');
+			 document.write('res02的值是:' + res02 + '<br/>');
+			 document.write(res01+"与"+res01+"的和是:"+sumres);
+
+			// 求最大值
+			function max(a,b){
+				if(a > b){
+					console.log(a);
+				}else if (a < b) {
+					console.log(a);
+				}else {
+					console.log(a+"等于"+b);
+				}
+			}
+			max(9,9)// 在此调用函数max
+
+	</script>
+</body>
+
+</html>

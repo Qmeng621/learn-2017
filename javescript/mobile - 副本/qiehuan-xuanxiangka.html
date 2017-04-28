@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>切换选项卡</title>
+
+<style>
+*{ margin-top:0;}
+#main{width:300px;height:200px;background:#999999;margin:0 auto;}
+
+#title{width:300px;height:50px;}
+.biaoqian{width:100px;height:50px;float:left;background:#00ffcc;text-align:center;line-height:50px;}
+.msg{ width:300px;height:150px;background:#666600;}
+.hide{display:none;}
+.hand{ cursor:pointer;}
+</style>
+
+<script language="javascript" type="text/javascript">
+function bt()
+{
+	var msgtitle=document.getElementById("msg_id");
+	var calltitle=document.getElementById("call_id");
+	msgtitle.className="hide";
+	calltitle.className="msg";
+}
+function bt1()
+{
+	var msgtitle=document.getElementById("msg_id");
+	var calltitle=document.getElementById("call_id");
+	msgtitle.className="msg";
+	calltitle.className="hide";
+}
+</script>
+</head>
+<body>
+	<div id="main">
+		<div id="title">
+			<div id="msgtitle" class="biaoqian hand" onclick="bt1()">消息</div>
+			<div id="calltitle" class="biaoqian hand" onclick="bt()">电话</div>
+		</div>
+		<div class="msg" id="msg_id">消息消息消息消息消息消息消息消息内容111111111111</div>
+		<div class="msg hide" id="call_id">电话电话电话电话电话电话电话电话内容222222222222</div>
+	</div>
+</body>
+</html>

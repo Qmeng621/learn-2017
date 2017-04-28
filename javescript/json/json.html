@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>json数据</title>
+
+<style>
+table { border-collapse:collapse; border-spacing:0; } th,td { padding: 4px 20px; border: 1px solid #999; text-align: center;}
+</style>
+</head>
+<body>
+	<div class="data-list">
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>城市</th>
+					<th>国家</th>
+					<th>洲</th>
+					<th>数量</th>
+					<th>经度</th>
+					<th>纬度</th>
+				</tr>
+			</thead>
+			<tbody id="data">
+
+			</tbody>
+		</table>
+	</div>
+	<script src="js/jquery-2.2.4.js">
+	</script>
+	<script>
+		var data={
+			"code": 200,
+			"data": {
+				"list": [
+					{
+						"id": 1,
+						"city": "东京",
+						"nation": "日本",
+						"continent": "亚洲",
+						"count": "234",
+						"longitude": "139.809",
+						"latitude": "35.6831"
+					},
+					{
+						"id": 2,
+						"city": "纽约",
+						"nation": "美国",
+						"continent": "北美洲",
+						"count": "534",
+						"longitude": "-73.987854",
+						"latitude": "40.622169"
+					},
+					{
+						"id": 3,
+						"city": "贝尔格莱德",
+						"nation": "塞尔维亚",
+						"continent": "欧洲",
+						"count": "5",
+						"longitude": "20.412556",
+						"latitude": "44.799683"
+					},
+					{
+						"id": 4,
+						"city": "利马",
+						"nation": "秘鲁",
+						"continent": "南美洲",
+						"count": "22",
+						"longitude": "-77.026822",
+						"latitude": "-12.155496"
+					},
+					{
+						"id": 5,
+						"city": "华盛顿",
+						"nation": "美国",
+						"continent": "北美洲",
+						"count": "43",
+						"longitude": "-76.953835",
+						"latitude": "38.890911"
+					},
+					{
+						"id": 6,
+						"city": "马德里",
+						"nation": "西班牙",
+						"continent": "欧洲",
+						"count": "878",
+						"longitude": "-3.690969",
+						"latitude": "40.442219"
+					},
+					{
+						"id": 7,
+						"city": "里约热内卢",
+						"nation": "巴西",
+						"continent": "南美洲",
+						"count": "232",
+						"longitude": "-43.455177",
+						"latitude": "-22.721573"
+					},
+					{
+						"id": 8,
+						"city": "巴黎",
+						"nation": "法国",
+						"continent": "欧洲",
+						"count": "65",
+						"longitude": "2.432833",
+						"latitude": "48.881554"
+					},
+					{
+						"id": 9,
+						"city": "科隆",
+						"nation": "德国",
+						"continent": "欧洲",
+						"count": "99",
+						"longitude": "6.934872",
+						"latitude": "50.942345"
+					},
+					{
+						"id": 10,
+						"city": "安卡拉",
+						"nation": "土耳其",
+						"continent": "亚洲",
+						"count": "44",
+						"longitude": "32.8533",
+						"latitude": "39.9293"
+					},
+					{
+						"id": 11,
+						"city": "开罗",
+						"nation": "埃及",
+						"continent": "非洲",
+						"count": "223",
+						"longitude": "31.250797",
+						"latitude": "30.077911"
+					},
+					{
+						"id": 12,
+						"city": "雅加达",
+						"nation": "印度尼西亚",
+						"continent": "亚洲",
+						"count": "899",
+						"longitude": "106.762",
+						"latitude": "-6.2939"
+					},
+					{
+						"id": 13,
+						"city": "伊斯兰堡",
+						"nation": "巴基斯坦",
+						"continent": "亚洲",
+						"count": "34",
+						"longitude": "73.060547",
+						"latitude": "33.718151"
+					},
+					{
+						"id": 14,
+						"city": "曼谷",
+						"nation": "泰国",
+						"continent": "亚洲",
+						"count": "121",
+						"longitude": "100.552666",
+						"latitude": "13.745571"
+					},
+					{
+						"id": 15,
+						"city": "布宜诺斯艾利斯",
+						"nation": "阿根廷",
+						"continent": "南美洲",
+						"count": "67",
+						"longitude": "-58.409592",
+						"latitude": "-34.665401"
+					},
+					{
+						"id": 16,
+						"city": "首尔",
+						"nation": "韩国",
+						"continent": "亚洲",
+						"count": "234",
+						"longitude": "126.935",
+						"latitude": "37.5424"
+					},
+					{
+						"id": 17,
+						"city": "基辅",
+						"nation": "乌克兰",
+						"continent": "欧洲",
+						"count": "11",
+						"longitude": "30.502111",
+						"latitude": "50.448158"
+					},
+					{
+						"id": 18,
+						"city": "柏林",
+						"nation": "德国",
+						"continent": "欧洲",
+						"count": "2",
+						"longitude": "13.327573",
+						"latitude": "52.516273"
+					},
+					{
+						"id": 19,
+						"city": "布鲁塞尔",
+						"nation": "比利时",
+						"continent": "欧洲",
+						"count": "456",
+						"longitude": "4.367612",
+						"latitude": "50.837048"
+					},
+					{
+						"id": 20,
+						"city": "河内",
+						"nation": "越南",
+						"continent": "亚洲",
+						"count": "43",
+						"longitude": "105.82",
+						"latitude": "21.0319"
+					},
+					{
+						"id": 21,
+						"city": "阿姆斯特丹",
+						"nation": "荷兰",
+						"continent": "欧洲",
+						"count": "21",
+						"longitude": "4.894833",
+						"latitude": "52.373043"
+					},
+					{
+						"id": 22,
+						"city": "莫斯科",
+						"nation": "俄罗斯",
+						"continent": "欧洲",
+						"count": "887",
+						"longitude": "37.938248",
+						"latitude": "55.764228"
+					},
+					{
+						"id": 23,
+						"city": "巴黎",
+						"nation": "法国",
+						"continent": "欧洲",
+						"count": "0",
+						"longitude": "2.432833",
+						"latitude": "48.881554"
+					},
+					{
+						"id": 24,
+						"city": "罗马",
+						"nation": "意大利",
+						"continent": "欧洲",
+						"count": "53",
+						"longitude": "12.490549",
+						"latitude": "41.895542"
+					}
+				],
+				"page": 1,
+				"size": 10,
+				"total": 24
+			},
+			"msg": "请求正确"
+		}
+
+		console.log(data);
+		var list = data.data.list;
+		console.log(list);
+		var listDOM = '';
+		$.each(list, function(key,val){
+			console.log(val)
+			listDOM += '<tr><td>' + val.id + '</td><td>' + val.city + '</td><td>' + val.nation + '</td><td>' + val.continent + '</td><td>' + val.count + '</td><td>' + val.longitude + '</td><td>' + val.latitude + '</td></tr>'
+		})
+		$('#data').append(listDOM)
+
+	</script>
+</body>
+</html>

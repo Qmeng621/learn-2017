@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>onblur 事件与 onfocus </title>
+</head>
+<body>
+	<!-- 当网页中的对象获得聚焦时，执行onfocus调用的程序就会被执行。
+onblur 事件与 onfocus 是相对事件，当光标离开当前获得聚焦对象的时候，触发 onblur 事件，同时执行被调用的程序。 -->
+<p id="pid"> onblur 事件与 onfocus </p>
+<input type="text" name="" id="input">
+	<script type="text/javascript">
+		var inp = document.getElementById("input");
+		inp.onfocus = focus;
+		inp.onblur = blur;
+		function focus() {
+		var pid = document.getElementById("pid");
+		pid.innerHTML = "focus";
+		}
+		function blur() {
+		var pid = document.getElementById("pid");
+		pid.innerHTML = "blur";
+		}
+	</script>
+</body>
+</html>

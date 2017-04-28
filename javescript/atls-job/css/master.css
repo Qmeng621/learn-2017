@@ -1,0 +1,133 @@
+/*重置样式*/
+body,div,p,ul,ol,dl,dt,dd,li,form,input,table,th,td,img,h1,h2,h3,h4,h5,h6 {margin: 0; padding: 0;}
+body { background: #fff; font-size: 12px; font-style: normal; font-family:'Microsoft Yahei','微软雅黑','Simsun','宋体','Arial', sans-serif; color: #000;}
+body,html{
+	font-size: 62.5%;
+	height: 100%;
+}
+table { border-collapse:collapse; border-spacing:0; font-size: 14px;} th,td { padding: 4px 20px; border: 1px solid #999; text-align: center;}
+em, b, i {font-style:normal;}
+li {list-style:none;}
+img {border:0;}
+a { text-decoration:none; color:#fff;}
+a:hover { text-decoration: underline; color:#d9c202;}
+.block{ display: block;}
+.font14{ font-size: 14px; color: #fff;line-height: 20px;}
+.font16{ font-size: 16px; color: #fff;line-height: 20px;}
+table { border-spacing:0; border-collapse:collapse;}
+
+.flt {float: left;}
+.frt {float: right;}
+.hand{ cursor:pointer;}
+.hide{ display:none;}
+.clearfix { *zoom: 1;}
+.clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
+.clearfix:after { clear: both;}
+
+/*layout start*/
+*{
+	box-sizing: border-box;
+}
+
+.wrap{
+	height: 100%;
+	position: relative;
+}
+
+/*header start*/
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 120px;
+	background: #014dc4;
+	padding: 15px 15px 0 15px;
+	overflow: hidden;
+}
+.header-top{
+	height: 45px;
+}
+.header-top-left{
+	height: 100%;
+	font-size: 2.6rem;
+	color: #fff;
+}
+
+.header-top-right >li{
+	float: left;
+	height: 16px;
+	line-height: 16px;
+	padding: 0 10px;
+	font-size: 1.6rem;
+	border-left: 1px solid #fff;
+}
+.header-top-right >li:first-child{
+	border:0;
+}
+
+.header-top-right >li >a{
+	color: #fff;
+}
+
+.header-bottom{
+	height: 60px;
+}
+.header-bottom-right{
+	margin-top: 15px;
+}
+.header-bottom-right li.current{
+	background: #d9c202;
+	width: 96px;
+	height: 44px;
+	line-height: 44px;
+	border-radius:4px 4px 0 0;
+	font-size: 16px;
+	text-align: center;
+}
+.header-bottom-right li{
+	float: left;
+	margin-left: 12px;
+	width: 96px;
+	height: 44px;
+	background: #0164fd;
+	line-height: 44px;
+	border-radius:4px 4px 0 0;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+.header-bottom-right li:hover,
+.header-bottom-right li:active{
+	background: #404040;
+}
+.gray{
+	background: #07bfca;
+}
+.header-bottom-right li.active{
+	background: #d9c202;
+	color: #000;
+}
+
+.container{
+	min-height: 650px;
+	background: #08c;
+}
+.mapbox{
+	position: absolute;
+	top: 120px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	background: #08c;
+	font-size: 24px;
+	color: #ff0;
+}
+.mapbox img{
+	width: 100%;
+}
+#databox{
+	color: #fff;
+	font-size: 16px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>appendChild</title>
+	<style>
+		.tips-modal {
+			position: fixed;
+			top: 100px;
+			width: 100%;
+			text-align: center;
+		}
+
+		.tips-modal span {
+			display: inline-block;
+			padding: 5px 10px;
+			background: rgba(0, 0, 0, 0.2);
+			font-size: 14px;
+			color: #fff;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="tips-modal" id="divBox"></div>
+	<script type="text/javascript">
+		var divBox = document.getElementById('divBox');
+		var span = document.createElement('span');//创建元素节点
+		var text = document.createTextNode('登录成功!');//创建文本节点
+		span.appendChild(text); //在父节点span末尾附加子节点text ，其中 text 为节点对象
+		console.log(divBox);
+		divBox.appendChild(span);
+
+		setTimeout(function() {
+			divBox.removeChild(span) //divBOx移除子节点span
+		}, 5000) // 5秒后移除span节点
+	</script>
+</body>
+
+</html>

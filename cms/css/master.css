@@ -1,0 +1,235 @@
+/*重置样式*/
+body,div,p,ul,ol,dl,dt,dd,li,form,input,table,th,td,img,h1,h2,h3,h4,h5,h6 {margin: 0; padding: 0;}
+body { background: #fff; font-size: 12px; font-style: normal; font-family:'Microsoft Yahei','微软雅黑','Simsun','宋体','Arial', sans-serif; color: #000;}
+body,html{
+	height: 100%;
+}
+em, b, i {font-style:normal;}
+li {list-style:none;}
+img {border:0;}
+a { text-decoration:none; color:#888;}
+a:hover { text-decoration: underline; color:#f50;}
+
+table { border-spacing:0; border-collapse:collapse;}
+
+.flt {float: left;}
+.frt {float: right;}
+
+.clearfix { *zoom: 1;}
+.clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
+.clearfix:after { clear: both;}
+
+/*layout start*/
+*{
+	box-sizing: border-box;
+}
+
+.wrap{
+	height: 100%;
+	position: relative;
+}
+
+/*slider-nav start*/
+.slider-nav{
+	float: left;
+	width: 220px;
+	height: 100%;
+	background: #222;
+}
+
+/*administrators start*/
+.administrators,
+.slider-nav-box{
+		padding-left: 20px;
+}
+.slider-nav-box,
+.content{
+	overflow: auto;
+}
+
+.administrators{
+	height: 15%;
+	background: #263747;
+	padding-top: 15px;
+}
+
+.administrators-face{
+	height: 80px;
+	width: 80px;
+}
+
+.administrators-face img{
+	height: 75px;
+	width: 75px;
+	border-radius: 50%;
+}
+
+.administrators span{
+	display: block;
+	width: 75px;
+	color: #bdcfd9;
+}
+
+.arrows{
+	background: url("../images/gray_arrows.png") no-repeat right;
+}
+/*administrators end*/
+
+/*slider-nav-box start*/
+.slider-nav-box{
+	height: 85%;
+	background: #2e3f4f;
+	padding-top: 15px;
+	padding-right: 20px;
+}
+
+.icon{
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-top: 14px;
+	background: url(../images/tubiao.png) no-repeat;
+}
+
+.icon-01 {
+  background-position: 0 0;
+}
+
+.icon-02 {
+  background-position: -21px 0;
+}
+
+.icon-03 {
+  background-position: -42px 0;
+}
+
+.icon-04 {
+  background-position: -63px 0;
+}
+
+.icon-05 {
+  background-position: -84px 0;
+}
+
+.icon-06 {
+  background-position: 0 -21px;
+}
+
+.icon-07 {
+  background-position: -21px -21px;
+}
+.icon-08 {
+  background-position: -42px -21px;
+}
+.icon-09 {
+  background-position: -63px -21px;
+}
+
+.icon-10 {
+  background-position: -84px -21px;
+}
+
+.slider-nav-box >li{
+  background: url("../images/jiantou02.png") no-repeat right;
+}
+
+.slider-nav-box >li >a{
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 4px;
+	color: #bdcfd9;
+	font-size: 14px;
+}
+/*slider-nav-box end*/
+
+/*module-right start*/
+.header,
+.content{
+	padding: 20px;
+}
+
+/*header start*/
+.header{
+position: fixed;
+top: 0;
+left: 220px;
+right: 0;
+height: 110px;
+background: #f1f1f1;
+border-bottom: 4px solid #314150;
+overflow: hidden;
+}
+
+.header-left{
+	height: 30px;
+}
+
+.icon-right{
+	float: left;
+	height: 20px;
+	width: 20px;
+	float: left;
+	margin-top: 5px;
+	background: url("../images/icon_right.png") no-repeat center;
+}
+
+.header-bottom{
+	height: 30px;
+}
+
+.header-bottom a{
+	display:inline-block;
+	background: #243644;
+	margin-top: 26px;
+	padding: 0 20px;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fff;
+}
+
+.icon-right-gouwuche{
+	background-position: 0 0;
+}
+
+.icon-right-use{
+	background-position: -20px 0;
+}
+
+.icon-right-tongji{
+	background-position: -40px 0;
+}
+
+.icon-right-daying{
+	background-position: -60px 0;
+}
+
+.header-right-nav li{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+}
+
+.header-right-nav li a{
+	display: inline-block;
+	margin-left: 10px;
+}
+/*header end*/
+
+/*content start*/
+.content{
+	position: absolute;
+	top: 160px;
+	right: 0;
+	bottom: 0;
+	left: 220px;
+}
+
+.content p{
+	margin: 40px 0;
+	text-indent: 2em;
+	text-align: justify;
+	font-size: 16px;
+	color: #666;
+}

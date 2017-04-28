@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>输出到页面/获取html元素/获取属性/设置属性</title>
+</head>
+<body>
+	<p id="pid" title="javescript">javescript</p>
+	<button id="btn">click</button>
+	<p>hello</p>
+	<p>Do you like</p>
+	<p>javescript</p>
+	<input type="text" name="iname" value="1">
+	<input type="text" name="iname" value="2">
+	<input type="text" name="iname" value="3">
+	<input type="text" name="iname" value="4">
+	<input type="text" name="iname" value="5">
+	<input type="text" name="iname" value="6">
+	<script>
+	//输出到页面:document.write()与alert;
+	//01:document.write():输出到页面
+	// var mynum = 'javescript'
+	// document.write(mynum);
+	// var mychar = '1&ndsp;&ndsp;&ndsp;2'
+	// document.write(mychar);
+
+	//alert
+	// var mysum = 3 + 4;
+	// alert(mysum);
+
+	//获取HTML元素:ID,标签名,名称共3种
+	//01:document.getElementById-通过ID获取元素--
+	// var pid = document.getElementById('pid');
+	// document.write('<br/>'+'内容是:'+pid.innerHTML);//输出pid的内容到页面
+
+	//02:-通过标签名获取元素document.getElementsTagName(TagName)
+	// var p = document.getElementsByTagName('p');
+	// for(var i = 0; i < p.length; i++){
+	// 	alert(p[i].innerHTML);
+	// }
+
+	//03-通过名称获取元素
+	// var inp = document.getElementsByTagName('iname')
+	// for(var i = 0; i < inp.length; i++){
+	// 	alert(inp[i].value);
+	// 	//console.log(inp[i].value);
+	// }
+
+	//获取属性与设置属性
+	var btn = document.getElementById('btn')
+	//元素.事件名 = 函数名;
+	btn.onclick = attr;
+	function attr(){
+		 var pid = document.getElementById('pid');
+		 alert('原始title是' + pid.getAttribute('title'));
+		 alert('原始id是' + pid.getAttribute('id'));
+		 pid.setAttribute('title','new_title');
+		 pid.setAttribute('id','new_id');
+		 alert(pid.getAttribute('title'));
+	}
+
+
+	</script>
+</body>
+</html>

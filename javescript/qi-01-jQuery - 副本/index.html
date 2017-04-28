@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jQuery</title>
+	<style>
+	*{
+		font-weight: bold;
+		color: #333;
+	}
+		.red{color: #f00;}
+		.hide{display: none;}
+	</style>
+
+</head>
+<body>
+	<div id="box" class="content red">这是box盒子</div>
+	<p>这是1个P标签</p>
+	<p>这是2个P标签</p>
+
+	<input type="button" id="btn" value="切换class">
+
+	<script src="./jquery-2.2.4.js"></script>
+	<script type="text/javascript">
+
+
+	//jQuery里都是封装好的函数(方法),拿到函数名就可以使用
+
+	//$是选择器,在CSS中选择器的作用是选择页面中某一类（类别选择器）元素或者某一个元素（ID选择器）
+	//而jQuery中的"$"作为选择器，同样是选择某一类或某一类元素，只不过jQuery提供了
+	//更多更全面的选择方式。
+			var dom =	$('<div>这是一个节点</div>');
+			$(dom).appendTo('body');//appendTo添加到的意思
+			var box = $('#box');
+			//box.removeAttr('class');移除属性class
+			//box.removeClass('red');//移除red class名
+			box.attr('title','盒子标题')//添加title属性
+			var content = $('.content');
+			//var p = $('p');
+			//p.addClass('pbox');//给p标签添加class
+			$('p').addClass('p2box');
+
+
+			$('#btn').click(function () {//js不能跟jQuery混写; 这里的click是函数; js里的 onclick是事件.
+				box.toggleClass('red');//toggleClass切换class. toggle:触发器,开关的意思
+				//box.toggleClass('hide');
+			})
+
+			// $('#btn').click(function () {
+			// 	box.after('<div>后边啦啦啦</div>')//在box前插入内容
+			//
+			// })
+
+		 // 跟上边注释掉的的意思一直,写法不同
+			$('#btn').on('click',(function () {box.after('<div>后边啦啦啦</div>')
+			//在box前插入内容
+		}))
+
+
+
+
+	</script>
+</body>
+</html>

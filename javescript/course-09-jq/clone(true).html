@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>attr</title>
+	<style type="text/css">
+		img {
+			border: solid 1px #ccc;
+			padding: 3px;
+			margin: 5px
+		}
+	</style>
+	<script src="js/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+	<!-- 案例 1:appendTo附加到 ;before / after -->
+	<ul class="ulBox">
+		<li><a href="">a1</a></li>
+		<li><a href="">a1</a></li>
+		<li><a href="">a1</a></li>
+		<li><a href="">a1</a></li>
+	</ul>
+	<hr>
+
+	<!-- 案例 2:clone(true) -->
+	<p>clone()方法用于复制一个元素，但是被复制出来的元素不具备复制的功能，如果希望被复制出来的元素也具备复制的功能，需要给clone()方法加上true这个参数，即clone(true).</p>
+	<span><img title="封面" alt="1" src="images/img04.jpg" /></span>
+	<script>
+		//案例 1:appendTo附加到
+		var box = $('<div>box</div>');
+		var boxtext = $('<div>boxbox</div>');
+		box.appendTo('body'); //等价于body.append(box)
+		boxtext.appendTo(box); //等价于box.append(boxtext)
+
+		$('.ulBox').append('<li>后来添加的li</li>')
+		$('.ulBox').before('<a>before添加的a</a>')
+		$('.ulBox').after('<a>after添加的a</a>')
+
+
+
+		//案例 2:clone(true)
+		$(function() {
+			$("img").click(function() {
+				$(this).clone(true).appendTo("span");//深clone(true)把事件也拷贝了
+				//$(this).clone().appendTo("span");//浅clone(),对应的事件丢失
+			})
+		})
+	</script>
+</body>
+
+</html>

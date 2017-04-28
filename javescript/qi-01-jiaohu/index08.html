@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>confirm确认框</title>
+</head>
+<body>
+<input id="inp" type="button" value="点击我">
+<script>
+// confirm确认框:弹出对话框有两个结果,确认按钮和取消按钮
+// confirm使用语法: confirm(str)
+function res(){
+	var message = confirm('Do you like me?');
+	if(message == true){
+		document.write('么么哒');
+	}else{
+		document.write('你走开');
+	}
+}
+var inp = document.getElementById('inp');
+inp.onclick = res;
+
+</script>
+</body>
+</html>

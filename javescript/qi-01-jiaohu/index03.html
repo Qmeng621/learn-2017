@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>js绑定事件</title>
+</head>
+<body>
+	<a href="#" onClick="fff()">js绑定事件</a>
+<script>
+function fff(e){
+	e.stopPropagation();
+}
+
+if(typeof document.addEventListener != "undefined"){
+	document.addEventListener("mousedown",fff);
+}else {
+	document.attachEvent("onmouse",fff);
+}
+if(typeof document.addEventListener !="undefined"){
+	document.removeEventListener("mousedown",fff,true);
+}else {
+	document.detachEvent("onmouse",fff);
+}
+</script>
+</body>
+</html>

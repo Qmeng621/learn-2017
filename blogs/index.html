@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>首页个人博客</title>
+    <link href="css/master.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <!--头部开始-->
+        <div class="header-box">
+            <div class="header">
+                <h1 class="hd-logo">
+                    <a href="#">HINDY DESIGN</a>
+                </h1>
+                <div class="nav">
+                    <ul>
+                        <li class="current">
+                            <a href="#">PORTFOLIO</a>
+                        </li>
+                        <li>
+                            <a href="#">BLOG</a>
+                        </li>
+                        <li>
+                            <a href="#">WORK</a>
+                        </li>
+                        <li>
+                            <a href="#">ABOUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--头部结束-->
+        <!--页面身体开始-->
+        <div class="body-box">
+            <div class="container">
+                <!--焦点图开始-->
+                <div class="focus">
+                    <div class="container-fluid text-center">
+                        <div class="header">
+                            <img class="headerImg" src="images/header.jpg" data-slideshow='images/img1.jpg|images/img2.jpg|images/img3.jpg'>
+                        </div>
+                    </div>
+                </div>
+                <!--焦点图结束-->
+                <!--图片项目列表开始-->
+                <div class="items-box clearfix">
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/01.jpg" /></a>
+                        </div>
+                        <h3>To Rothko</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/02.gif" /></a>
+                        </div>
+                        <h3>Walkthroughs (GIF)</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/03.jpg" /></a>
+                        </div>
+                        <h3>Calories calculator</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/04.jpg" /></a>
+                        </div>
+                        <h3>Masadora Icon for Android</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/05.jpg" /></a>
+                        </div>
+                        <h3>Masadora Icon for Android</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/11.jpg" /></a>
+                        </div>
+                        <h3>Connect button</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/07.jpg" /></a>
+                        </div>
+                        <h3>Afro Samurai Revenge of Kuma</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/12.jpg" /></a>
+                        </div>
+                        <h3>Sketch</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/09.jpg" /></a>
+                        </div>
+                        <h3>Yes, It's my logo</h3>
+                    </div>
+                    <div class="item">
+                        <div class="item-img">
+                            <a href="#"><img src="images/10.jpg" /></a>
+                        </div>
+                        <h3>UI.CN Icon</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--页面身体结束-->
+        <!--页尾开始-->
+        <div class="footer">
+            <div class="copyright">
+                QmengWEB 版权所有 Copyright © 2014-2016 QmengWEB Inc. All Rights Reserved
+            </div>
+        </div>
+        <!--页尾结束-->
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.hammer-full.min.js"></script>
+    <script src="js/plugin.js">
+    </script>
+    <script src="js/lrtk.js"></script>
+    <script>
+        var links = ["http://www.lanrentuku.com", "http://www.lanrentuku.com/lanren/", "http://www.lanrentuku.com/js/biaoqian.html", "http://www.lanrentuku.com/js/xiangce.html"];
+        $(".slide").click(function () {
+            var index = $(this).attr('index');
+            if (index === undefined) {
+                window.open(links[0]);
+            } else {
+                window.open(links[(parseInt(index) + 1)]);
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

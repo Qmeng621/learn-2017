@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>setInterval</title>
+</head>
+<body>
+	<input type="text" name="" id="clock" size="50">
+	<script>
+		function clock() {
+			var time = new Date();
+			var attime = time.getHours()+ ":"+ time.getMinutes()+":"+time.getSeconds();
+			document.getElementById("clock").value = attime;
+		}
+		setInterval(clock,1000);//1000毫秒就是函数执行间隔周期.
+		//setInterval()方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。即按照指定指定间隔时间调用一次函数
+		//周期:若一组事件或现象按同样的顺序重复出现，则把完成这一组事件或现象的时间或空间间隔，称为周期。
+		//方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。
+	</script>
+</body>
+</html>

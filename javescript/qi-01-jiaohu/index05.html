@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>鼠标onmouseover经过/鼠标onmouseout移除事件</title>
+</head>
+<body>
+	<p id="pid">javescript</p>
+	<button id="btn">click</button>
+	<script>
+	var btn = document.getElementById('btn');
+
+	btn.onmouseover = over;
+	btn.onmouseout = out;
+
+	function over(){
+		var pid = document.getElementById('pid');
+		pid.innerHTML = 'over';
+	}
+
+	function out(){
+		var pid = document.getElementById('pid');
+		pid.innerHTML = 'out';
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>计时器-开始计时与计时计时</title>
+</head>
+<body>
+	<input type="text" value="" id="count">
+	<input type="button" id="istart" value="start">
+	<input type="button" id="istop" value="stop">
+	<script>
+
+			var setID;
+			var num = 0;
+
+			function startCount(){
+				document.getElementById("count").value = num;
+				num = num + 1;
+				setID = setTimeout("startCount()",1000);//递归,自己召唤自己
+				//setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+				//语法: setTimeout(code,millisec):code必需。要调用的函数后要执行的 JavaScript 代码串。millisec:毫秒
+				//setTimeout() 只执行 code 一次。如果要多次调用，请使用 setInterval() 或者让 code 自身再次调用 setTimeout()。
+			}
+
+			var istart = document.getElementById("istart");
+			istart.onclick = function(){
+				startCount();
+			}
+
+			var istop = document.getElementById("istop");
+			istop.onclick = function(){
+				clearTimeout(setID);
+			}
+
+	</script>
+</body>
+</html>

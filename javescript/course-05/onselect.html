@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>onselect 事件</title>
+</head>
+<body>
+	<!--选中事件，当文本框或者文本域中的文字被选中时，触发 onselect 事件，同时调用的程序就会被执行。
+通过改变文本框的内容来触发 onchange 事件，同时执行被调用的程序。  -->
+	<p id="pid">pid的内容</p>
+	<input type="text" id="input" value="文本框">
+	<script type="text/javascript">
+		var inp = document.getElementById("input");
+		inp.onselect = select;
+		inp.onchange = change;
+		function select() {
+		var pid = document.getElementById("pid");
+		pid.innerHTML = "select";
+		}
+		function change() {
+		var pid = document.getElementById("pid");
+		pid.innerHTML = "change";
+		}
+	</script>
+</body>
+</html>

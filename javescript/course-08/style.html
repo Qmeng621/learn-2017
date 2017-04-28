@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>js设置style</title>
+
+</head>
+<body>
+	<h2 id="textbox">JavaScript</h2>
+	<input type="button" id="inp" value="click">
+	<script type="text/javascript">
+	    var inp = document.getElementById("inp");
+	    inp.onclick = function () {
+	        var oh = document.getElementById("textbox");
+	        textbox.style.color = "#ff0";
+	        textbox.style.width = "190px";
+	        textbox.style.backgroundColor = "#080";
+			textbox.style.borderRadius = "10px"
+	    }
+	</script>
+</body>
+</html>

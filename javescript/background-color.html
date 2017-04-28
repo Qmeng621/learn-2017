@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.bg {
+			width: 100px;
+			height: 100px;
+			background: black;
+			margin: 10px;
+			float: left;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var divs = document.getElementsByTagName("div");
+			var len = divs.length;
+			for (var i = 0; i < len; i++) {
+				divs[i].onclick = function() {
+					for (var j = 0; j < len; j++) {
+						divs[j].style.backgroundColor = "black";
+					}
+					this.style.backgroundColor = "red";
+				};
+			}
+		};
+	</script>
+</head>
+
+<body>
+	<div id="div1" class="bg"></div>
+	<div id="div2" class="bg"></div>
+	<div id="div3" class="bg"></div>
+	<div id="div4" class="bg"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>findAndChildren</title>
+
+</head>
+
+<body>
+	<ul id="ulBox">
+		<li>内容01</li>
+		<li>内容02</li>
+		<li><span>find找到的span内容01</span></li>
+		<li>内容04</li>
+	</ul>
+	<hr>
+
+	<hr>
+	<!-- 案例 2:  -->
+	<div id="abc">
+		<span>Hello</span>
+		<p class="pbox">Hello Again</p>
+		<p>12121
+			<div class="pbox">And Again</div>
+			<span class="pbox">aaAnd Again</span>
+		</p>
+		<p>And One Last Time</p>
+	</div>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		////案例 1:
+		var ul = $('#ulBox');
+		var span = ul.children('span')//在#ulBox的第一级内找span,第一级内没有span,所有console 的 span 的lenght是0
+		console.log('chlidren找到的:',span)
+
+		var ul = $('#ulBox');
+		var span = ul.find('span')//在#ulBox的第一级内找span,第一级内没有span,所有console 的 span 的lenght是0
+		console.log('find找到的span:',span)//$找到的都是对象,中间用分号间隔
+
+		// var ul = $('#ulBox');
+		// var children = ul.children();
+		// children.each(function(key, val) {
+		// 	console.log('key:', key);
+		// 	console.log('val:', val.innerHTML);
+		// })
+
+		//等价于上面的写法
+		$.each($('#ulBox li'),function (key, val) {
+			console.log('key:', key);
+			console.log('val:', val.innerHTML);
+		})
+
+		//案例 2:
+		$(document).ready(function() {
+			$('#abc').children('.pbox').css('color', '#080');
+		});
+
+	</script>
+</body>
+
+</html>

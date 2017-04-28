@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>获取焦点与失去焦点</title>
+</head>
+<body>
+	<p id="pid">hhh</p>
+	<input type="text" id="inp">
+<script>
+	var inp = document.getElementById('inp');
+	inp.onfocus = focus;
+	inp.onblur = blur;
+	function focus() {
+		var pid =document.getElementById('pid');
+		pid.innerHTML = 'focus';
+	}
+	function blur() {
+		var pid =document.getElementById('pid');
+		pid.innerHTML = 'blur';
+	}
+
+</script>
+</body>
+</html>

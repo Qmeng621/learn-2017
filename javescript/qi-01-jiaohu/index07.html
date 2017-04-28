@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>输入框内容onselect/选中与改变onchange</title>
+</head>
+<body>
+	<p id="pid">pid的内容</p>
+	<input type="text" id="inp" value="文本框">
+<script>
+var inp = document.getElementById('inp');
+inp.onselect = select;
+inp.onchange = change;
+function select(){
+	var pid = document.getElementById('pid');
+	pid.innerHTML = 'select';
+}
+function change(){
+	var pid = document.getElementById('pid');
+	pid.innerHTML = 'change';
+}
+</script>
+</body>
+</html>

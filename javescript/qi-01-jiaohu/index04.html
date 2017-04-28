@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>js单击事件</title>
+</head>
+<body>
+<p id="pid">javescript</p>
+<button id="btn">click</button>
+<script>
+	var btn = document.getElementById('btn');
+	btn.onclick = hello;
+
+	function hello(){
+		var pid = document.getElementById('pid');
+		pid.innerHTML = 'hello';//pid输出 hello
+	}
+</script>
+</body>
+</html>

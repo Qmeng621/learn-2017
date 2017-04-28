@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>dblclick-鼠标双击事件</title>
+	<style>
+		.dblclick {
+			width: 150px;
+			height: 120px;
+			background: #080;
+		}
+
+		.hide {
+			display: block;
+		}
+		.box{
+			float: left;
+			width: 90px;
+			height: 36px;
+			line-height: 36px;
+			border-radius: 4px;
+			background: #444;
+			text-align: center;
+			cursor: pointer;
+			border: 0;
+		}
+		.bg{
+			background: #777;
+		}
+
+		.subBtn{
+			display: none;
+			position: fixed;
+			top: 50px;
+			left: 45%;
+			width: 90px;
+			height: 30px;
+			line-height: 30px;
+			background: #444;
+			color: #fff;
+			border-radius: 6px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 案例 1:双击事件 -->
+	<button type="button" id="dblclickBtn">双击看看</button>
+	<div class="dblclick">双击的结果</div>
+	<hr>
+
+	<!-- 案例 2:hover事件 -->
+	<div class="box">hover事件</div>
+	<div class="box">hover事件</div>
+	<div class="box">hover事件</div>
+	<div class="box">hover事件</div>
+	<br><br>
+	<hr>
+
+	<!-- 案例 3:show事件 -->
+	<button type="button" class="boxBtn">boxBtn按钮</button>
+	<hr>
+	<div class="subBtn">提交成功</div>
+	<hr>
+
+
+	<!-- 案例 5:事件委托 -->
+	<ul class="ulBox">
+		<li>sdggdg</li>
+		<li>sdggdg</li>
+		<li>sdggdg</li>
+	</ul>
+
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		// 案例 1:双击事件
+		$('#dblclickBtn').on('dblclick',function(){
+			$('.dblclick').toggle('.hide');
+		})
+
+		// 案例 2:hover事件,切换样式
+		$('.box').hover(function(){
+			$(this).toggleClass('bg');
+		})
+
+		// // 案例 3:show事件
+		// $('.boxBtn').on('click',function(){
+		// 	$('.subBtn').show();
+		// 	setTimeout(function(){
+		// 		$('.subBtn').hide();
+		// 	},3000)//三秒后隐藏
+		// })
+
+		// // 案例 4:fadeIn事件淡入事件
+		// $('.boxBtn').on('click',function(){
+		// 	$('.subBtn').fadeIn();//fadeIn()与show()不能同时使用
+		// 	setTimeout(function(){
+		// 		$('.subBtn').hide();
+		// 	},3000)//三秒后隐藏
+		// })
+
+
+		// // 案例 4-1 :slideDown下拉事件
+		// $('.boxBtn').on('click',function(){
+		// 	$('.subBtn').slideDown();//fadeIn()与show()不能同时使用
+		// 	setTimeout(function(){
+		// 		$('.subBtn').hide();
+		// 	},3000)//三秒后隐藏
+		// })
+
+		// // 案例 4-2 :slideUp下拉事件
+		// $('.boxBtn').on('click',function(){
+		// 	$('.subBtn').show().slideUp();//必须先显示show(),才可slideUp使用下拉
+		// })
+
+
+		// // 案例 4-3 :slideToggle上卷下拉事件
+		// $('.boxBtn').on('click',function(){
+		// 	$('.subBtn').slideToggle();//slideToggle()上卷下拉事件
+		// })
+
+		// 案例 4-4 :touchend移动端触摸事件
+		$('.boxBtn').on('touchend',function(){//touchend()必须切换到手机移动模式才可以使用
+			$('.subBtn').slideToggle();
+		})
+
+		//案例 5:事件委托
+		$('.ulBox').on('click','li', function (e) {//把事件委托给li标签了
+			console.log(e)
+		})
+	</script>
+</body>
+
+</html>

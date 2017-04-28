@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>prompt提问框</title>
+</head>
+<body>
+<input id="inp" type="button" value="点击我">
+<script>
+// prompt 弹出消息对话框,通常用于询问一些需要与用户交互的信息。弹出消息对话框（包含一个确定按钮、取消按钮与一个文本输入框）
+// prompt弹出消息对话框(有三个对象,一个确定按钮,一个取消按钮,一个输入框)
+// prompt使用语法: prompt(str1,str2)
+// str1:对话框中的文本,不可修改
+// str2:输入框里的内容,可以修改,可以不填
+// 返回值:点击确定按钮,输入框中的内容将作为函数的返回值;点击取消按钮,函数返回 null
+
+function res(){
+	var score; //成绩分数; 用于存储用户输入的成绩值的变量
+	score = prompt('你的成绩?',80)
+	if(score >= 95){
+		document.write("你非常棒!")
+	}else if(score >=75 ){
+		document.write("不错哦")
+	}else if(score >=60 ){
+		document.write("要加油哦")
+	}else{
+		document.write('要努力了哦')
+	}
+}
+var inp = document.getElementById('inp')
+inp.onclick = res;
+
+</script>
+</body>
+</html>

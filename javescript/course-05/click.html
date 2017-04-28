@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>onclick</title>
+</head>
+<body>
+	<!-- onclick 是鼠标单击事件，当用户在网页上单击某元素时，就会触发该事件。
+用法： 元素.onclick = 函数名; -->
+	<p id="pid">JavaScript</p>
+	<button id="btn">click</button>
+	<script type="text/javascript">
+	    var btn = document.getElementById("btn");
+	    btn.onclick = hello;
+	    function hello() {
+	        var pid = document.getElementById("pid");
+	        pid.innerHTML = "Hello!";
+	    }
+	</script>
+</body>
+</html>

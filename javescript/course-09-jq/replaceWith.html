@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>replaceWith 与replaceAll</title>
+</head>
+
+<body>
+	<div>div标签1</div>
+	<div>div标签1</div>
+	<div>div标签1</div>
+	<div>div标签1</div>
+	<p>p段落标签</p>
+	<p>p段落标签</p>
+	<p>p段落标签</p>
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script>
+		$('div').replaceWith('div标签新内容');
+		$('内容').replaceAll('p');
+		//前者是用括号中的字符替换所选择的元素，后者是用字符串替换括号中所选择的元素。同时，一旦完成替换，被替换元素中的全部事件都将消失。
+
+	</script>
+</body>
+
+</html>

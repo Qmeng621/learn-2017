@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>onload</title>
+</head>
+<body>
+<input id="inp" type="button" value="点击我">
+<script>
+
+	// 当页面加载出来或刷新的时候,Windows的 onload 的事件就会被触发
+	//对象.事件 = 函数名;
+	window.onload = load;
+	function load(){
+		alert('load');
+	}
+
+</script>
+</body>
+</html>
