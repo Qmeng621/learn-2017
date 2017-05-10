@@ -54,7 +54,7 @@
 						html = html + '<tr><td>' + val.id + '</td><td>' + val.name + '</td><td>' + (val.price / 100).toFixed(2) + '</td><td>' + val.quantity + '</td><td>' + val.sku + '</td><td>' + (val.quantity * val.price / 100).toFixed(2) + '</td></tr>';
 					}
 					$('#tBox').append(html);
-					var sumhtml = '<tr><td>总金额</td><td></td><td></td><td></td><td></td><td>' + sum + '</td></tr>';
+					var sumhtml = '<tr><td>总金额</td><td></td><td></td><td></td><td></td><td></td></tr>';
 					$('#tBox').append(sumhtml);
 					console.log(sum);
 				}
@@ -65,20 +65,7 @@
 
 		})
 
-		$.ajax({
-			url: '/v5/weather',
-			type: 'GET',
-			data: {
-				city: 'beijing',
-				key: 'da1e4169318846b89fad7484211de12a'
-			},
-			success: function (res) {
-				console.log(res)
-			},
-			error: function (err) {
-				console.log(err)
-			}
-		})
+// $.ajax({ // url: '/v5/weather', // type: 'GET', // data: { // city: 'beijing', // key: 'da1e4169318846b89fad7484211de12a' // }, // success: function (res) { // console.log(res) // }, // error: function (err) { // console.log(err) // } // })
 	</script>
 </body>
 

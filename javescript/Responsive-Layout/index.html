@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <title>
+        Responsive Design Example
+    </title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+
+        <!-- nav start -->
+        <nav>
+            <a href="#" id="menuIcon">Ξ</a>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">产品中心</a></li>
+                <li><a href="#">服务范围</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+        <!-- nav end -->
+
+        <!-- aside 侧栏start -->
+        <aside>
+            <ul>
+                <li><a href="#subtitle1">项目11</a></li>
+                <li><a href="#subtitle2">项目11</a></li>
+                <li><a href="#subtitle3">项目11</a></li>
+                <li><a href="#subtitle4">项目11</a></li>
+                <li><a href="#subtitle5">项目11</a></li>
+            </ul>
+        </aside>
+        <!-- aside 侧栏end -->
+
+        <!-- post start -->
+        <section class="post">
+            <article>
+                <h1>
+                    标题
+                </h1>
+                <p id="subtitle1">
+                    <strong>
+                        subtitle1
+                    </strong>
+                </p>
+                <p>
+                    //正文被省略
+                    <br> 技术进步经济繁荣，使很多人从繁重的劳动解脱，他们有了一定的闲暇，灵魂需要填补，而影视娱乐是最大众化的填充剂。所以现在，各种年龄段的明星，上至七老八十，下到十多岁的小屁孩，都有密集的明星分布。年龄跨越不到十岁，你就有可能不知道在另一个年龄段里如雷贯耳的明星。
+                </p>
+                <p id="subtitle2">
+                    <strong>
+                        subtitle2
+                    </strong>
+                </p>
+
+                <p>网上有个段子，说是开学第一天，老师叫几个同学上黑板默写。有一成语，其他人写的是“狼狈为奸”，偏偏段子手本人写的是“狼被围歼”……</p>
+                <p>我觉得，前后两个“狼”，都可以指代中国娱乐圈；“狈”，就是中国第一狗仔卓伟。说卓伟与娱乐圈是“为奸”的关系，说卓伟的狗仔队“围歼”娱乐圈，意思大概都不会太滑边。</p>
+                <p>技术进步经济繁荣，使很多人从繁重的劳动解脱，他们有了一定的闲暇，灵魂需要填补，而影视娱乐是最大众化的填充剂。所以现在，各种年龄段的明星，上至七老八十，下到十多岁的小屁孩，都有密集的明星分布。年龄跨越不到十岁，你就有可能不知道在另一个年龄段里如雷贯耳的明星。</p>
+                <p>而且除了电影电视，通过互联网，什么表演吃土，阿狗阿猫，也可以积攒名气。成名的渠道宽阔得很，什么人都有。</p>
+
+                <!-- grid start -->
+                <section class="grid">
+                    <div class="item">
+                        #1
+                    </div>
+                    <div class="item">
+                        #2
+                    </div>
+                    <div class="item">
+                        #3
+                    </div>
+                </section>
+                <!-- grid end -->
+
+                <p>
+                    <p id="subtitle3">
+                        <strong>
+                            subtitle3
+                        </strong>
+                    </p>
+                    //正文被省略
+                    <br>技术进步经济繁荣，使很多人从繁重的劳动解脱，他们有了一定的闲暇，灵魂需要填补，而影视娱乐是最大众化的填充剂。所以现在，各种年龄段的明星，上至七老八十，下到十多岁的小屁孩，都有密集的明星分布。年龄跨越不到十岁，你就有可能不知道在另一个年龄段里如雷贯耳的明星。
+                </p>
+                <p id="subtitle4">
+                    <strong>
+                        subtitle4
+                    </strong>
+                </p>
+
+                <img class="illustration" src="beauty.png" title="sample pic" alt="beauty" />
+
+                <p id="subtitle5">
+                    <strong>
+                        subtitle5
+                    </strong>
+                </p>
+
+                <p>
+                    //正文被省略
+                    <br>技术进步经济繁荣，使很多人从繁重的劳动解脱，他们有了一定的闲暇，灵魂需要填补，而影视娱乐是最大众化的填充剂。所以现在，各种年龄段的明星，上至七老八十，下到十多岁的小屁孩，都有密集的明星分布。年龄跨越不到十岁，你就有可能不知道在另一个年龄段里如雷贯耳的明星。
+                </p>
+
+
+            </article>
+        </section>
+        <!-- post end -->
+
+        <!-- footer start -->
+        <footer>
+            <hr>
+            <ul>
+                <li><small>Wayou &copy 2013|</small></li>
+                <li><small><a href="mailto:sample@somesite.com">Contact</a></small> </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#menuIcon,nav ul li").click(function () {
+            if ($("#menuIcon").is(":visible")) { //防止宽屏上点击
+                $("nav ul").toggle(300);
+            };
+        });
+    })
+
+    $(window).resize(function () {
+        if (!$("nav ul").is(":visible")) {
+            $('nav ul').attr('style', function (i, style) {
+                return style.replace(/display[^;]+;?/g, '');
+            });
+        };
+    });
+</script>
+
+</html>
