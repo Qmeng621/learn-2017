@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html5新特性</title>
+</head>
+
+<body>
+    <header>h5新标签</header>
+
+    <mark>mark黄底白字</mark>
+
+    <header>
+          <hgroup>
+              <h2>h2标签</h2>
+              <h2>h2标签</h2>
+          </hgroup>
+    </header>
+
+    <figure>
+        <img src="img.jpg" alt="11">
+        <figcaption>
+            <p>图片描述内容</p>
+        </figcaption>
+    </figure>
+
+    <small>小号文字</small>
+
+    <form class=""  method="post">
+        <label for="someinput">名字</label>
+        <input type="text" id="" name="someinput" placeholder="请输入文字" required="required">
+        <button type="submit" name="button">提交</button>
+    </form>
+
+    <input type="text" name="someinput" autofocus="" placeholder="请输入内容" required="required">
+
+    <br>
+    <!-- 音频案例开始 -->
+    <button onclick="Loop()" type="button">启用循环</button>
+	<button onclick="noLoop()" type="button">禁用循环</button>
+	<button onclick="checkLoop()" type="button">检查循环的状态</button>
+    <br>
+    <audio id="myaudio" class="bg-music hide show" controls="controls">
+        <source src="welcome.ogg">
+        <source src="welcome.ogg">
+        <a href="">点击下载</a>
+    </audio>
+    <script>
+		var myaudio = document.getElementById("myaudio");
+
+		function Loop() {
+			myaudio.loop = true;
+			myaudio.load();
+		}
+
+		function noLoop() {
+			myaudio.loop = false;
+			myaudio.load();
+		}
+
+		function checkLoop() {
+			alert(myaudio.loop);
+		}
+
+
+
+	</script>
+    <!-- 音频案例结束 -->
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/jquery-3.2.1.js"></script>
+	<title>json与ajax</title>
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse; //属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。
+			border-spacing: 0;
+		}
+		
+		th,
+		td {
+			padding: 4px 20px;
+			border: 1px solid #c4c4c4;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<thead>
+			<th>id</th>
+			<th>商品名称</th>
+			<th>单价</th>
+			<th>数量</th>
+			<th>sku</th>
+			<th>总价</th>
+		</thead>
+		<tbody id="tBox">
+
+		</tbody>
+	</table>
+	<script>
+		$.ajax({
+			url: '/goods.json',
+			type: 'GET',
+			dataType: "json",
+			success: function (res) { //res是我们自己命名的变量,后台返回的数据就赋值给变量res
+				var html = '';
+				var sum = 0;
+				if (res && res.code === 200) {
+					var list = res.data.list || []; //万一前面的list没有,返回的没有东西,那得有备用的东西是个数组,不然会出错
+					for (i = 0; i < list.length; i++) { //循环每一个商品
+						var val = list[i];
+						var itemSum = val.price * (val.quantity / 100).toFixed(2);
+						sum = itemSum + sum; //每一个商品总价累加
+						html = html + '<tr><td>' + val.id + '</td><td>' + val.name + '</td><td>' + (val.price / 100).toFixed(2) + '</td><td>' + val.quantity + '</td><td>' + val.sku + '</td><td>' + (val.quantity * val.price / 100).toFixed(2) + '</td></tr>';
+					}
+					$('#tBox').append(html);
+					var sumhtml = '<tr><td>总金额</td><td></td><td></td><td></td><td></td><td>' + sum + '</td></tr>';
+					$('#tBox').append(sumhtml);
+					console.log(sum);
+				}
+			},
+			error: function (err) {
+				console.log(err);
+			}
+
+		})
+
+		$.ajax({
+			url: '/v5/weather',
+			type: 'GET',
+			data: {
+				city: 'beijing',
+				key: 'da1e4169318846b89fad7484211de12a'
+			},
+			success: function (res) {
+				console.log(res)
+			},
+			error: function (err) {
+				console.log(err)
+			}
+		})
+	</script>
+</body>
+
+</html>
